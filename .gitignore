@@ -1,0 +1,7 @@
+# Intellij Idea
+*.iws
+*.iml
+.idea
+out
+
+.DS_Store

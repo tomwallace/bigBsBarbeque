@@ -1,0 +1,131 @@
+/* Generic styles*/
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: #000000;
+    font-family: Helvetica, Arial, Sans-Serif;
+    font-size: 1em;
+}
+
+p, div.paragraph {
+    padding-bottom: 0.7em;
+}
+
+a, a:link, a:visited, a:hover {
+    text-decoration: underline;
+    font-weight: normal;
+    color: #437996;
+}
+h1 {
+    font-size: 2em;
+    padding-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+    padding-bottom: 0.3em;
+}
+h3 {
+    font-size: 1.2em;
+}
+
+/* Layout Styles */
+.fixedWidthWrapper {
+    width: 64em; /* 1024px */
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    zoom: 1;  /* For IE7 display bug */
+    z-index: 100;
+}
+
+#content {
+    width: 62em;
+    padding: 1em;
+    background: #FFFFFF;
+    min-height: 31.25em;
+    overflow: hidden;
+    border-top: 0.5em solid #253066;
+}
+
+#header {
+    background: #000000 url('smoke100.png') repeat-x left top;
+    height: 10em;
+    z-index: 50;
+    width: 100%;
+}
+
+#header-main {
+    background: #000000 url('headerBackgroundFade.png') repeat-x left top;
+    height: 10em;
+    overflow: hidden;
+    position: relative;
+}
+
+#header-logo {
+    padding: 0.2em 0.5em;
+}
+
+#header-title {
+    padding: 0.2em 0.5em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    font-size: 4em;
+    font-weight: bold;
+    color: #FFFFFF;  /*#253066;*/
+}
+
+#menu {
+    padding: 0.2em 0.5em;
+    position: absolute;
+    bottom: 0.2em;
+    right: 0;
+    overflow: hidden;
+    font: bold 1.5em Helvetica, Arial, Sans-Serif; text-transform: uppercase;
+    background-color: #000000;
+    color: #e09d8d;
+    width: 32em;
+}
+#menu ul {
+    text-align: center;
+}
+#menu li {
+    float: left;
+    list-style: none;
+    padding-left: 2.7em;
+}
+#footer {
+    height: 6em;
+    background: #000000 url('flames100.jpg') repeat-x left bottom;
+    width: 100%;
+    overflow: hidden;
+}
+#footer-main {
+    width: 50em;
+    background-color: #000000;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    height: 6em;
+    color: #f2cf57;
+}
+#footer-text {
+    padding: 0.5em 0;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0.2em;
+    left: 1.3em;
+}
+#facebook-link {
+    padding: 0.5em 0;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    right: 1.4em;
+}
+
+/* END Layout Styles */
