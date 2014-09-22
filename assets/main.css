@@ -9,6 +9,10 @@ body {
     font-size: 1em;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 p, div.paragraph {
     padding-bottom: 0.7em;
 }
@@ -25,10 +29,11 @@ h1 {
 
 h2 {
     font-size: 1.5em;
-    padding-bottom: 0.3em;
+    padding-bottom: 1em;
 }
 h3 {
     font-size: 1.2em;
+    padding-bottom: 1.2em;
 }
 
 /* Layout Styles */
@@ -51,14 +56,14 @@ h3 {
 }
 
 #header {
-    background: #000000 url('smoke100.png') repeat-x left top;
+    background: #000000 url('images/smoke170.png') repeat-x left top;
     height: 10em;
     z-index: 50;
     width: 100%;
 }
 
 #header-main {
-    background: #000000 url('headerBackgroundFade.png') repeat-x left top;
+    background: #000000 url('images/headerBackgroundFade.png') repeat-x left top;
     height: 10em;
     overflow: hidden;
     position: relative;
@@ -69,26 +74,37 @@ h3 {
 }
 
 #header-title {
-    padding: 0.2em 0.5em;
+    padding: 0 0.43em;
     position: absolute;
     top: 0;
     right: 0;
     overflow: hidden;
-    font-size: 4em;
+    font-size: 4.1em;
     font-weight: bold;
-    color: #FFFFFF;  /*#253066;*/
+    color: #FFFFFF;
+}
+
+#header-address {
+    padding: 0.2em 1.6em;
+    position: absolute;
+    top: 4.55em;
+    right: 0;
+    overflow: hidden;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #253066;
 }
 
 #menu {
-    padding: 0.2em 0.5em;
+    padding: 0 0.5em;
     position: absolute;
     bottom: 0.2em;
     right: 0;
     overflow: hidden;
-    font: bold 1.5em Helvetica, Arial, Sans-Serif; text-transform: uppercase;
+    font: bold 1.3em Helvetica, Arial, Sans-Serif; text-transform: uppercase;
     background-color: #000000;
     color: #e09d8d;
-    width: 32em;
+    width: 39em;
 }
 #menu ul {
     text-align: center;
@@ -96,16 +112,36 @@ h3 {
 #menu li {
     float: left;
     list-style: none;
-    padding-left: 2.7em;
+    padding: 0.2em 0 0.2em 2.4em;
+}
+#menu li.short-padding {
+    padding-left: 1.2em;
+}
+#menu li.active {
+    padding: 0 0 0 1.2em;
+}
+#menu li.active div {
+    padding: 0.2em 1.2em;
+    background-color: #e09d8d;
+    color: #253066;
+}
+#menu li:hover a, #menu li:hover a:link, #menu li:hover a:visited, #menu li:hover a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+#menu a, #menu a:link, #menu a:visited, #menu a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    color: #e09d8d;
 }
 #footer {
     height: 6em;
-    background: #000000 url('flames100.jpg') repeat-x left bottom;
+    background: #000000 url('images/flames100.jpg') repeat-x left bottom;
     width: 100%;
     overflow: hidden;
 }
 #footer-main {
-    width: 50em;
+    width: 52em;
     background-color: #000000;
     text-align: center;
     overflow: hidden;
@@ -129,3 +165,9 @@ h3 {
 }
 
 /* END Layout Styles */
+
+div.image {
+    float: right;
+    position: relative;
+    padding: 0 0 1em 1em;
+}

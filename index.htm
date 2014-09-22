@@ -8,69 +8,108 @@
 
     <link href="assets/reset.css" type="text/css" rel="stylesheet"/>
     <link href="assets/main.css" type="text/css" rel="stylesheet"/>
+    <link href="assets/slideshow.css" type="text/css" rel="stylesheet"/>
 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <script type='text/javascript' src='assets/jquery-1.11.1.min.js'></script>
+    <script type='text/javascript' src='assets/js/jquery-1.11.1.min.js'></script>
+
+    <!-- use jssor.slider.mini.js (40KB) or jssor.sliderc.mini.js (32KB, with caption, no slideshow) or jssor.sliders.mini.js (28KB, no caption, no slideshow) instead for release -->
+    <!-- jssor.slider.mini.js = jssor.sliderc.mini.js = jssor.sliders.mini.js = (jssor.core.js + jssor.utils.js + jssor.slider.js) -->
+    <script type="text/javascript" src="assets/js/jssor.core.js"></script>
+    <script type="text/javascript" src="assets/js/jssor.utils.js"></script>
+    <script type="text/javascript" src="assets/js/jssor.slider.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            //Reference http://www.jssor.com/development/slider-with-slideshow-jquery.html
+            //Reference http://www.jssor.com/development/tool-slideshow-transition-viewer.html
+
+            var _SlideshowTransitions = [
+                //Fade
+                { $Duration: 1200, $Opacity: 2 }
+            ];
+
+            var options = {
+                $SlideDuration: 500,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlayInterval: 1500,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $SlideshowOptions: {                                //[Optional] Options to specify and enable slideshow or not
+                    $Class: $JssorSlideshowRunner$,                 //[Required] Class to create instance of slideshow
+                    $Transitions: _SlideshowTransitions,            //[Required] An array of slideshow transitions to play slideshow
+                    $TransitionsOrder: 1,                           //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
+                    $ShowLink: false                                    //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+                }
+            };
+
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+        });
+    </script>
 
 </head>
 <body>
 <div id="header">
     <div id="header-main" class="fixedWidthWrapper">
-        <div id="header-logo"><img src="assets/bigBsLogo150.png" alt="Big Bs BBQ Logo"/></div>
+        <div id="header-logo"><img src="assets/images/bigBsLogo150.png" alt="Big Bs BBQ Logo"/></div>
         <div id="header-title">Big B's BBQ and Catering</div>
+        <div id="header-address">14971 Spotswood Trail Ruckersville, VA 22968 | (434) 990-0085</div>
         <div id="menu">
             <ul>
-                <li>Home</li>
-                <li>Big B's Story</li>
-                <li>Menu</li>
-                <li>Catering</li>
+                <li class="active"><div>Home</div></li>
+                <li class="short-padding"><a href="story.htm">Big B's Story</a></li>
+                <li><a href="menu">Menu</a></li>
+                <li><a href="catering">Catering</a></li>
+                <li><a href="mailto:bigbsbbqva@gmail.com">Contact Us</a></li>
             </ul>
         </div>
     </div>
 </div>
 <div id="content" class="fixedWidthWrapper">
-    <h2>Welcome to Big B's BBQ and Catering. Lorem ipsum dolor sit amet, ei nam virtute docendi liberavisse, ut duo
-        bonorum detracto. Pri ei saperet impedit
-        accusata, sea et causae eirmod assueverit, has te debet noster. Est solum munere minimum eu. Nostro corpora
-        suscipit eu vis, ad aperiam lobortis complectitur mei, sea et inimicus volutpat. Facilis efficiantur sit in,
-        insolens maiestatis at duo.</h2>
+    <h1 class="bold">Welcome to Big B's BBQ and Catering,</h1>
 
-    <h2>Eu tritani perfecto pri, tritani singulis ad qui, ne facete accumsan expetendis eum. Ei eripuit voluptatum vis.
-        Ex vix novum euripidis. Vero lucilius vix ea.</h2>
+    <h3>At Big B's BBQ we strive to bring you the best food, service and dining experience possible. From our hickory smoked meats and scratch made sides, sauces and desserts, to our customer service, our goal is to ensure your meal is an experience you'll savor again and again. We believe that you'll find our barbeque is among the best you'll find anywhere. Our recipes are the result of years of testing and preparation. We offer a variety of options and are assured you'll find something you love. We hope you'll enjoy eating our barbeque as much as we do making it for you. Drop in or call ahead for carry out or join us in our casual, cozy space for a delightful meal. We also offer a full spectrum of catering options.</h3>
 
-    <p>Maiorum quaestio erroribus his id. Ne viris adipisci qui. Pro fabellas suavitate voluptatibus ex, an pro copiosae
-        apeirian. Ei quo sensibus oportere, integre vituperata mediocritatem et mea.</p>
+    <h3>Remember Big B's for all of your BBQ needs!</h3>
 
-    <p>An vim vero putent, mollis platonem cotidieque ea nam. Eu choro dicam tractatos pro, vero accusata evertitur ne
-        cum. Mel oblique nostrud ei, exerci assentior cum in. Id vis duis offendit intellegebat, et labore persecuti
-        accommodare nec. Decore viderer eu sit, duo primis erroribus percipitur ut. Ex qui impedit mandamus, pro
-        mediocrem constituam consequuntur ne, in aliquam facilisis sed. Ad eos sumo numquam dissentiet.</p>
+    <div id="slider1_container">
 
-    <p>Lorem ipsum dolor sit amet, ei nam virtute docendi liberavisse, ut duo bonorum detracto. Pri ei saperet impedit
-        accusata, sea et causae eirmod assueverit, has te debet noster. Est solum munere minimum eu. Nostro corpora
-        suscipit eu vis, ad aperiam lobortis complectitur mei, sea et inimicus volutpat. Facilis efficiantur sit in,
-        insolens maiestatis at duo.</p>
+        <!-- Loading Screen -->
+        <div id="slider-loading" u="loading">
+            <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+                background-color: #000; top: 0px; left: 0px;width: 100%;height:100%;">
+            </div>
+            <div style="position: absolute; display: block; background: url(assets/images/loading.gif) no-repeat center center;
+                top: 0px; left: 0px;width: 100%;height:100%;">
+            </div>
+        </div>
 
-    <p>Eu tritani perfecto pri, tritani singulis ad qui, ne facete accumsan expetendis eum. Ei eripuit voluptatum vis.
-        Ex vix novum euripidis. Vero lucilius vix ea.</p>
+        <!-- Slides Container -->
+        <div id="slider-slides" u="slides">
+            <div>
+                <img u=image src="assets/images/01.jpg" />
+            </div>
+            <div>
+                <img u=image src="assets/images/02.jpg" />
+            </div>
+            <div>
+                <img u=image src="assets/images/03.jpg" />
+            </div>
+            <div>
+                <img u=image src="assets/images/04.jpg" />
+            </div>
+        </div>
+    </div>
 
-    <p>Maiorum quaestio erroribus his id. Ne viris adipisci qui. Pro fabellas suavitate voluptatibus ex, an pro copiosae
-        apeirian. Ei quo sensibus oportere, integre vituperata mediocritatem et mea.</p>
-
-    <p>An vim vero putent, mollis platonem cotidieque ea nam. Eu choro dicam tractatos pro, vero accusata evertitur ne
-        cum. Mel oblique nostrud ei, exerci assentior cum in. Id vis duis offendit intellegebat, et labore persecuti
-        accommodare nec. Decore viderer eu sit, duo primis erroribus percipitur ut. Ex qui impedit mandamus, pro
-        mediocrem constituam consequuntur ne, in aliquam facilisis sed. Ad eos sumo numquam dissentiet.</p>
 </div>
 <div id="footer">
     <div id="footer-main" class="fixedWidthWrapper">
         <div id="footer-text">
-            &copy; 2014 Big B's BBQ and Catering | XXXX Spotswood Trail Ruckersville, VA 22968 | (434) 981-5159 |
+            &copy; 2014 Big B's BBQ and Catering, LLC | 14971 Spotswood Trail Ruckersville, VA 22968 | (434) 990-0085 |
         </div>
         <div id="facebook-link">
-            <a href="https://www.facebook.com/BigBsBBQandCatering" target="_blank"><img src="assets/facebook20.png"
+            <a href="https://www.facebook.com/BigBsBBQandCatering" target="_blank"><img src="assets/images/facebook20.png"
                                                                                         alt="Facebook logo"/></a>
         </div>
     </div>

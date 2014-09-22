@@ -1,0 +1,23 @@
+#slider1_container {
+    position: relative;
+    width: 62em;
+    height: 10em;
+    overflow: hidden;
+    padding: 1em 0;
+}
+
+#slider-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#slider-slides {
+    cursor: move;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 62em;
+    height: 10em;
+    overflow: hidden;
+}
