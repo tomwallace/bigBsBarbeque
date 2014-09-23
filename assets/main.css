@@ -166,8 +166,13 @@ h3 {
 
 /* END Layout Styles */
 
-div.image {
+div.image-story {
     float: right;
     position: relative;
     padding: 0 0 1em 1em;
+}
+div.image-catering {
+    float: left;
+    position: relative;
+    padding: 0 1.91em 0 0;
 }
