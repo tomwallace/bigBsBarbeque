@@ -36,6 +36,10 @@ h3 {
     padding-bottom: 1.2em;
 }
 
+div.clear {
+    clear: both;
+    overflow: hidden;
+}
 /* Layout Styles */
 .fixedWidthWrapper {
     width: 64em; /* 1024px */
@@ -175,4 +179,30 @@ div.image-catering {
     float: left;
     position: relative;
     padding: 0 1.91em 0 0;
+}
+
+div.left-section {
+    position: relative;
+    float: left;
+    width: 42em;
+    overflow: hidden;
+    padding-right: 1em;
+}
+
+div.right-section {
+    position: relative;
+    float: right;
+    width: 16em;
+    overflow: hidden;
+    padding-left: 1em;
+}
+div#hours-of-operation {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 1.2em;
+    text-align: center;
+}
+div#hours-of-operation h2 {
+    color: #e09d8d;
 }
